@@ -2,7 +2,7 @@
 using namespace std;
 int main()
 {
-    int n;
+    int n, mod, count = 0;
     cin >> n;
     cin.ignore();
     for (int i = 0; i < n; i++)
@@ -14,7 +14,18 @@ int main()
         {
             fact *= j;
         }
-        
+        while (fact > 0)
+        {
+            mod = fact % 10;
+            if (mod == 0)
+            {
+                count++;
+            }
+            else
+                break;
+            fact = fact / 10;
+        }
+
         cout << fact << endl;
     }
 }
